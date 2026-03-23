@@ -1,0 +1,8 @@
+langchain-community
+langchain-groq
+sqlalchemy
+pymysql
+python-dotenv
+
+
+# pip install -r requirements.txt
