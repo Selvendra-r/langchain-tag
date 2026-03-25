@@ -4,13 +4,19 @@ from langchain_groq import ChatGroq
 from langchain_community.utilities import SQLDatabase
 from langchain_community.agent_toolkits import create_sql_agent
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # --- 1. DATABASE CONNECTION ---
 
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")  # ← change
-DB_HOST = os.getenv("DB_HOST")
-DB_NAME = "DB_NAME"
-
+# DB_USER = os.getenv("DB_USER")
+# DB_PASSWORD = os.getenv("DB_PASSWORD")  # ← change
+# DB_HOST = os.getenv("DB_HOST")
+# DB_NAME = "DB_NAME"
+DB_USER = "root"
+DB_PASSWORD = "admin123"
+DB_HOST = "localhost"
+DB_NAME = "sales_report"
 db_url = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:3306/{DB_NAME}"
 engine = create_engine(db_url)
 
